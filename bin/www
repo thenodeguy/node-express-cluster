@@ -1,0 +1,34 @@
+#!/usr/bin/env node
+
+var cluster = require('cluster');
+var os = require('os');
+
+// The cluster management code, which will run an instance of the application
+// on each CPU core.
+if(cluster.isMaster) {
+
+  // Set up a worker process on each core.
+  var numWorkers = os.cpus().length;
+  for(var i = 0; i < numWorkers; i++) {
+      cluster.fork();
+  }
+
+  cluster.on('online', function(worker) {
+      console.log('Worker ' + worker.process.pid + ' is online');
+  });
+
+  cluster.on('exit', function(worker, code, signal) {
+      // When a worker process exits, create another to replace it.
+      cluster.fork();
+  });
+  return;
+}
+
+// The main app, an instance of which will run on each worker process.
+var app = require('../app');
+var http = require('http');
+var port = process.env.PORT || '8000';
+var server = http.createServer(app);
+server.listen(port, function() {
+  console.log('Process ' + process.pid + ' listening to all incoming requests');
+});
