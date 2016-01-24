@@ -1,5 +1,8 @@
 # node-express-cluster
-A basic and lean solution for clustering a node express server. 
+A basic and lean solution for clustering a node express server.
+
+This solution will fork one worker process per CPU core. Each worker will run
+an instance of the app.
 
 
 To install
