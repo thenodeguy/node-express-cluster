@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+'use strict';
 
 var cluster = require('cluster');
 var os = require('os');
@@ -27,7 +27,7 @@ if(cluster.isMaster) {
 // The main app, an instance of which will run on each worker process.
 var app = require('../app');
 var http = require('http');
-var port = process.env.PORT || '8000';
+var port = process.env.PORT || '80';
 var server = http.createServer(app);
 server.listen(port, function() {
   console.log('Process ' + process.pid + ' listening to all incoming requests');

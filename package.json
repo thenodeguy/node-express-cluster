@@ -1,12 +1,23 @@
 {
   "name": "node-express-cluster",
-  "version": "0.0.0",
-  "private": true,
+  "description": "A basic and lean solution for clustering a node express server.",
+  "version": "1.0.0",
+  "author": "benjaminvickers",
+  "license": "ISC",
+  "homepage": "https://github.com/thenodeguy/node-express-cluster#readme",
+  "main": "app.js",
   "scripts": {
     "start": "node ./bin/www"
   },
   "dependencies": {
     "express": "~4.13.1"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thenodeguy/node-express-cluster.git"
+  },
+  "bugs": {
+    "url": "https://github.com/thenodeguy/node-express-cluster/issues"
+  }
 }

@@ -17,7 +17,7 @@ $ npm install
 To run
 -
 ```
-$ npm start
+$ sudo npm start
 ```
 
 
@@ -25,5 +25,5 @@ To test:
 -
 Run the command several times to see responses from both worker processes.
 ```
-$ curl -i -X GET http://localhost:8000
+$ curl -i -X GET http://localhost:80
 ```
