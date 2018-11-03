@@ -1,4 +1,7 @@
 # node-express-cluster
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/bjvickers/node-express-cluster.svg)](https://greenkeeper.io/)
+
 A basic and lean solution for clustering a node express server.
 
 This solution will fork one worker process per CPU core. Each worker will run
